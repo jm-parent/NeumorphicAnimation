@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shades="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
+             xmlns:neumorphicClock="clr-namespace:NeumorphicClock;assembly=NeumorphicClock"
+             x:Class="NeumorphicClock.MainPage">
+    <ScrollView>
+        <StackLayout Spacing="10">
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20,80,20,60" />
+                        <On Platform="iOS" Value="20,60,20,60" />
+                        <On Platform="UWP" Value="20,80,20,20" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </StackLayout.Padding>
+
+            <Label Style="{StaticResource TextHeadline}"
+                   Margin="{StaticResource HeaderMargin}"
+                   Text="Neumorphism made easy"
+                   TextColor="{DynamicResource DynamicPrimaryOnBackgroundColor}" />
+
+            <neumorphicClock:NeumorphicView />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<neumorphicClock:ShadowsElement xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:neumorphicClock="clr-namespace:NeumorphicClock;assembly=NeumorphicClock"
+             xmlns:shades="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="NeumorphicClock.NeumorphicView">
+    <Frame IsClippedToBounds="False" 
+           Margin="5,5,5,10"
+           Padding="20,15"
+           CornerRadius="10"
+           HasShadow="False"
+           BackgroundColor="{DynamicResource DynamicFrameBackgroundColor}"
+           >
+        <Frame.BorderColor>
+            <OnPlatform x:TypeArguments="Color">
+                <OnPlatform.Platforms>
+                    <On Platform="Tizen" Value="Transparent" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </Frame.BorderColor>
+        <ScrollView>
+            <StackLayout>
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition x:Name="Description" Height="Auto" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Style="{StaticResource TextBodySecondary}"
+                   Margin="0,0,0,20"
+                   Text="Since you can apply many shadows to any view, implementing #neumorphism is a walking piece of cake in the park!" />
+
+                    <shades:Shadows Grid.Row="1"
+                        Grid.Column="0"
+                        CornerRadius="40"
+                        x:Name="ButtonPlusNeuShadows"
+                        >
+                        <shades:Shadows.Shades>
+                            <shades:ImmutableShades>
+                                <shades:Shade x:Name="LightShade"
+                                        BlurRadius="10"
+                                          Opacity="1"
+                                          Offset="-10,-10"
+                                          Color="White" />
+                                <shades:Shade x:Name="DarkShade"
+                                              BlurRadius="10"
+                                          Opacity="1"
+                                          Offset="6,6"
+                                          Color="#19000000" />
+                            </shades:ImmutableShades>
+                        </shades:Shadows.Shades>
+                        <pancakeView:PancakeView 
+                                                 WidthRequest="60"
+                                                 Margin="20,5"
+                                                 CornerRadius="15" x:Name="PancakeView"
+                                                 >
+                            <pancakeView:PancakeView.BackgroundGradientStops>
+                                <pancakeView:GradientStopCollection>
+                                    <pancakeView:GradientStop Offset="0" x:Name="GradientOne"  />
+                                    <pancakeView:GradientStop Offset="1" x:Name="GradientTwo"  />
+                                </pancakeView:GradientStopCollection>
+                            </pancakeView:PancakeView.BackgroundGradientStops>
+                      
+                        </pancakeView:PancakeView>
+                    </shades:Shadows>
+           
+                    <shades:Shadows Grid.Row="1"
+                                    Grid.Column="1"
+                                    CornerRadius="40"
+                    >
+                        <shades:Shadows.Shades>
+                            <shades:ImmutableShades>
+                                <shades:Shade x:Name="LightzShade"
+                                              BlurRadius="10"
+                                              Opacity="1"
+                                              Offset="-10,-10"
+                                              Color="White" />
+                                <shades:Shade x:Name="DarkzShade"
+                                              BlurRadius="10"
+                                              Opacity="1"
+                                              Offset="6,6"
+                                              Color="#19000000" />
+                            </shades:ImmutableShades>
+                        </shades:Shadows.Shades>
+                        <ImageButton WidthRequest="60"
+                                     HeightRequest="60"
+                                     Padding="20"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="{DynamicResource DynamicFrameBackgroundColor}"
+                                     CornerRadius="30"
+                                     Clicked="ImageButtonOnClicked"
+                                     Source="{StaticResource IconPlusGray}" />
+                    </shades:Shadows>
+
+                    <shades:Shadows Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        CornerRadius="30"
+                        Shades="{shades:NeumorphismShades}">
+
+                        <Frame HeightRequest="60"
+                       Margin="15,20"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       BackgroundColor="{DynamicResource DynamicFrameBackgroundColor}"
+                       CornerRadius="30"
+                       IsClippedToBounds="True">
+                            <Frame.BorderColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Tizen" Value="Transparent" />
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Frame.BorderColor>
+                            <tabs:TabHostView SelectedIndex="0">
+                                <tabs:TabHostView.Tabs>
+                                    <tabs:BottomTabItem IconImageSource="{StaticResource IconCogWhite}"
+                                                IsTextVisible="False"
+                                                SelectedTabColor="Gray"
+                                                UnselectedIconColor="White" />
+                                    <tabs:BottomTabItem IconImageSource="{StaticResource IconSearchWhite}"
+                                                IsTextVisible="False"
+                                                SelectedTabColor="Gray"
+                                                UnselectedIconColor="White" />
+                                    <tabs:BottomTabItem IconImageSource="{StaticResource IconMicWhite}"
+                                                IsTextVisible="False"
+                                                SelectedTabColor="Gray"
+                                                UnselectedIconColor="White" />
+                                </tabs:TabHostView.Tabs>
+                            </tabs:TabHostView>
+                        </Frame>
+                    </shades:Shadows>
+                </Grid>
+
+            </StackLayout>
+
+
+        </ScrollView>
+
+    </Frame>
+</neumorphicClock:ShadowsElement>
