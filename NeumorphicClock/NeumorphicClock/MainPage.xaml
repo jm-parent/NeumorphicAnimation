@@ -19,7 +19,7 @@
 
             <Label Style="{StaticResource TextHeadline}"
                    Margin="{StaticResource HeaderMargin}"
-                   Text="Neumorphism made easy"
+                   Text="Neumorphic animation : Convexe-Concav"
                    TextColor="{DynamicResource DynamicPrimaryOnBackgroundColor}" />
 
             <neumorphicClock:NeumorphicView />
