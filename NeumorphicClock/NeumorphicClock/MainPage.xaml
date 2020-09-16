@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:shades="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
-             xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
-             xmlns:neumorphicClock="clr-namespace:NeumorphicClock;assembly=NeumorphicClock"
-             x:Class="NeumorphicClock.MainPage">
+<ContentPage
+    x:Class="NeumorphicClock.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:neumorphicClock="clr-namespace:NeumorphicClock;assembly=NeumorphicClock"
+    xmlns:shades="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+    xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms">
     <ScrollView>
         <StackLayout Spacing="10">
             <StackLayout.Padding>
@@ -17,10 +18,11 @@
                 </OnPlatform>
             </StackLayout.Padding>
 
-            <Label Style="{StaticResource TextHeadline}"
-                   Margin="{StaticResource HeaderMargin}"
-                   Text="Neumorphic animation : Convexe-Concav"
-                   TextColor="{DynamicResource DynamicPrimaryOnBackgroundColor}" />
+            <Label
+                Margin="{StaticResource HeaderMargin}"
+                Style="{StaticResource TextHeadline}"
+                Text="Neumorphic animation : Convex-Concave"
+                TextColor="{DynamicResource DynamicPrimaryOnBackgroundColor}" />
 
             <neumorphicClock:NeumorphicView />
 

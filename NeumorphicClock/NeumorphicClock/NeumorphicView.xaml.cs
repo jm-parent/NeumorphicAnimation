@@ -15,8 +15,10 @@ namespace NeumorphicClock
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NeumorphicView : ShadowsElement
     {
+
         private PancakeView firstAnimationHolder = new PancakeView();
         private PancakeView secondAnimationHolder = new PancakeView();
+
         public NeumorphicView()
         {
             InitializeComponent();
